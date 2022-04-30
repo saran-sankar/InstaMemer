@@ -1,6 +1,7 @@
 import requests
 import config
 import json
+import random
 
 def postInstagramQuote(image_location_1):
 
