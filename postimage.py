@@ -9,7 +9,10 @@ def postInstagramQuote(image_location_1):
     username = ''
     
     six_dots = '\n . ' * 6 + '\n'
-    hashtags = '#funnymemes #memes #meme #funny #memesdaily #comedy #lol #humor #dankmemes #funnyvideos #lmao #love #fun #jokes #follow #instagram #tiktok #explore #hilarious #instagood #haha #dank #dailymemes #edgymemes #funnyshit #memestagram #lmfao #laugh'
+    with open('hashtags') as file:
+        hashtag_list = list(set(file.read().split('\n')))
+    hashtags_chosen = random.choices(hashtag_list, k=30)
+    hashtags = ' '.join(str(item) for item in hashtags_chosen)
     
     payload = {
     'image_url': image_location_1,
