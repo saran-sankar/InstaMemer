@@ -12,7 +12,7 @@ def postInstagramQuote(image_location_1):
     six_dots = '\n . ' * 6 + '\n'
     with open('hashtags') as file:
         hashtag_list = list(set(file.read().split('\n')))
-    hashtags_chosen = random.choices(hashtag_list, k=30)
+    hashtags_chosen = random.sample(hashtag_list, k=30)
     hashtags = ' '.join(str(item) for item in hashtags_chosen)
     
     payload = {
